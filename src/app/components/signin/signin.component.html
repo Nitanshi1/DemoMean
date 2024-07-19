@@ -1,0 +1,50 @@
+
+<div class="container">
+<div class="sign-in-container container">
+    <h2>Register</h2>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control" [ngClass]="{'is-invalid': signInForm.get('name')?.invalid && signInForm.get('name')?.touched}">
+        <div *ngIf="signInForm.get('name')?.invalid && signInForm.get('name')?.touched" class="invalid-feedback">
+          Please enter your name. (Min length: 2)
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid': signInForm.get('email')?.invalid && signInForm.get('email')?.touched}">
+        <div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched" class="invalid-feedback">
+          Please enter a valid email.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': signInForm.get('password')?.invalid && signInForm.get('password')?.touched}">
+        <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="invalid-feedback">
+          <div *ngIf="signInForm.get('password')?.errors?.['required']">Password is required.</div>
+          
+          <div *ngIf="signInForm.get('password')?.errors?.['pattern']">
+            Password must contain:
+            <ul>
+              <li>At least 1 Uppercase</li>
+              <li>At least 1 Lowercase</li>
+              <li>At least 1 Number</li>
+              <li>At least 1 Symbol (!#$%^&*_=+-)</li>
+              <li>Minimum 8 characters and Maximum 12 characters</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary w-100" [disabled]="signInForm.invalid">Register</button>
+      <div class="additional-links">
+       <hr>
+       <p align="center"><b>Already have an account!</b></p>
+        <button  class="btn btn-primary" routerLink="/login" >Login</button>
+      </div>
+
+    </form>
+  </div>
+</div>

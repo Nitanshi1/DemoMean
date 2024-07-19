@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #3234c1; */
+    background: linear-gradient(
+        0deg,
+        rgb(198, 230, 246) 0%,
+        rgb(9, 63, 210) 90%
+      );
+    padding: 15px 30px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-links li {
+    margin: 0 15px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #080894;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-buttons {
+    display: flex;
+}
+
+.navbar-buttons .login-btn,
+.navbar-buttons .signup-btn {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.navbar-buttons .login-btn:hover {
+    background-color: #d4daf1;
+    color: #343640;
+    border-color: #e3e3e7;
+}
+
+.navbar-buttons .signup-btn:hover {
+    background-color: #e0dff4;
+    color: #1d1b1b;
+    border-color: #e3e3e7;
+}
+
+
